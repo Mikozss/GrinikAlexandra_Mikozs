@@ -1,0 +1,4 @@
+students_1 = int(input())  #input students
+students_2 = int(input())  #input students
+students_3 = int(input())  #input students
+print(students_1 // 2 + students_1 % 2 + students_2 // 2 + students_2 % 2 + students_3 // 2 + students_3 % 2)  #count
