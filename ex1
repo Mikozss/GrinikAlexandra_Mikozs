@@ -1,0 +1,9 @@
+import statistics as stat  # import statistics
+num1 = int(input())
+num2 = int(input())
+num3 = int(input())  # input the numbers
+sp = [num1, num2, num3]  # create a list
+print('{0:.6f}'.format(stat.mean(sp)), end=" ; ")  # Calculate the median
+print('{0:.6f}'.format(stat.median(sp)), end=" ; ")  # Calculate the arithmetic mean
+print('{0:.6f}'.format(stat.harmonic_mean(sp)), end=" ; ")  # Calculate the harmonic mean
+print(max(sp) ** min(sp) / (stat.mean(sp)))
