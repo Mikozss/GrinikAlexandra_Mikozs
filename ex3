@@ -1,0 +1,4 @@
+n = int(input())  #input minutes
+hours = n % (60 * 24) // 60  #find hours
+minutes = n % 60  #find minutes
+print(f"hours - {hours} , minutes - {minutes}")  #print time
