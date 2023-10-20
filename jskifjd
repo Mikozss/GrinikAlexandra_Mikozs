@@ -1,0 +1,53 @@
+import random as r
+
+var = ["камень", "ножницы", "бумага"]
+
+def get_user_choice():
+    user_choice = input("Выберите: камень, ножницы, бумага: \n")
+    while user_choice not in var:
+        print("Неверный ввод")
+        user_choice = input("Выберите: камень, ножницы, бумага: \n")
+    return user_choice
+
+def get_pc_choice():
+    return r.choice(var)
+
+def winner(user_choice, cp_choice):
+    if user_choice == cp_choice:
+        return "ничья"
+    elif(
+            (user_choice == "камень" and cp_choice == "ножницы" ) or
+            (user_choice == "ножницы" and cp_choice == "бумага") or
+            (user_choice == "бумага" and cp_choice == "камень")
+     ):
+        return "победа :) "
+    else:
+        return "поражение :( "
+
+def play_game():
+    print("Добро пожаловать в игру!")
+    x = 0
+    c = 0
+    while True:
+        user = get_user_choice()
+        pc = get_pc_choice()
+
+        print(f"Вы выбрали {user}")
+        print(f"Комп выбрал {pc}")
+
+        result = winner(user, pc)
+        if result == "победа :) ":
+            x += 1
+        elif result == "поражение :( ":
+            c += 1
+        print(result)
+
+        again = input("Играть снова? (да / нет) \n" )
+        if again != "да":
+            print(f"Спасибо за игру! Ваш выйгрыш {x} раз, а компьютер {c}")
+            break
+        if x == 3 or c == 3:
+            print(f"Спасибо за игру! Ваш выйгрыш {x} раз, а компьютер {c}")
+            break
+
+play_game()
