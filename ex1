@@ -1,0 +1,7 @@
+num = float(input("Введите вещественное число: \n"))
+if num > 0:  #check number
+    print(1)
+elif num < 0:  #check number
+    print(-1)
+else:  #number is zero
+    print(0) 
