@@ -1,4 +1,4 @@
-kl1, kl2, kl3, kl4 = map(int, input("Введите числа: \n ").split(","))  # inpur numbers
+kl1, kl2, kl3, kl4 = map(int, input("Введите числа: \n ").split(","))  # input numbers
 
 if 1 <= kl1 <= 8 and 1 <= kl2 <= 8 and 1 <= kl3 <= 8 and 1 <= kl4 <= 8:  # searching wrong numbers
     if (kl1 + kl2 + kl3 + kl4) % 2 == 0:  # searching with formula that colors are similar
