@@ -1,0 +1,54 @@
+import datetime
+
+#import os
+#ухх библиотека для файлов
+
+"""
+path = os.path.normpath("C:\Новая папка")  #для того чтобы открывалось на других операционках
+
+
+for path, dirnames, filenames in os.walk(path):
+    print(f"path - {path}")
+    print(f"dirnames - {dirnames}")
+    print(f"filenaes - {filenames}")
+"""
+
+#ОТНОСИТЕЛЬНЫЙ ПУТЬ
+
+"""
+# path = os.path.normpath("new_dir")
+#os.mkdir(path) #создание папки
+# os.rmdir(path)  #удаление папки
+
+поэтапно, но лучше ариант снизу т.к. у меня сломалось в прошлый раз
+
+file = open("file1.txt", "w")
+file.write("Я люблю покушать!")
+file.close()
+file = open("file1.txt", "a")
+file.write("А ещё, я люблю собачек")
+file.close()
+file = open("file1.txt", "r")
+print(file.read())
+file.close()
+
+
+#можем с помощью with
+
+with open("file1.txt", "a", encoding="utf-8") as file:
+    file.write("Hello")
+"""
+while True:
+    name = input("Введите название заметки: \n")
+    if name == "выйти":
+        break
+    content = input("Введите содержимое заметки: \n")
+    time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    main_file = open("Дневник записок.txt","a", encoding="utf-8")
+    main_file.write(f"{time}\n")
+    main_file.write(str(name) + " - Название заметки")
+    main_file.close()
+
+    file = open(str(name) + ".txt", "w",  encoding="utf-8")
+    file.write("Ваша заметка: \n\n" + str(content))
+    file.close()
