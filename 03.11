@@ -1,0 +1,161 @@
+"""
+
+#  игры 03.11.23
+from tkinter import * #  Сразу импорт всего и не надо писать вначале
+
+canvas_width = 800 #  разрешение
+canvas_height = 600
+color = "black"
+brush_size = 3
+
+def paint(event):
+    global color
+    global brush_size
+    x1 = event.x - brush_size
+    x2 = event.x + brush_size
+    y1 = event.y - brush_size
+    y2 = event.y + brush_size
+    holst.create_oval(x1,y1,x2,y2,
+                      fill = color, outline = color)
+
+def brush_size_change(new_size):
+    global brush_size
+    brush_size = new_size
+
+
+def color_change(new_color):
+    global color
+    color = new_color
+
+
+root = Tk()
+root.title('Пэинт типп')
+
+holst = Canvas(
+           root,
+           width = canvas_width,
+           height = canvas_height,
+           bg = "white"
+           )
+
+holst.bind("<B1-Motion>", paint)
+
+
+#button red
+red_btn = Button(text="Red", width = 10,
+                 command=lambda: color_change("red")
+                 )
+
+red_btn.grid(row=0, column=2)
+
+
+#button black
+black_btn = Button(text="black", width = 10,
+                 command=lambda: color_change("black")
+                 )
+
+black_btn.grid(row=0, column=1)
+
+
+#button  green
+green_btn = Button(text="green", width = 10,
+                 command=lambda: color_change("green")
+                 )
+
+green_btn.grid(row=0, column=3)
+
+#button blue
+blue_btn = Button(text="blue", width = 10,
+                 command=lambda: color_change("blue")
+                 )
+
+blue_btn.grid(row=0, column=4)
+
+#button blue
+blue_btn = Button(text="blue", width = 10,
+                 command=lambda: color_change("blue")
+                 )
+
+blue_btn.grid(row=0, column=4)
+
+
+#button yellow
+yellow_btn = Button(text="yellow", width = 10,
+                 command=lambda: color_change("yellow")
+                 )
+
+yellow_btn.grid(row=0, column=5)
+
+#button white
+white_btn = Button(text="white", width = 10,
+                 command=lambda: color_change("white")
+                 )
+
+white_btn.grid(row=0, column=6)
+
+
+
+#button holst
+empty_holst = Button(text="empty", width = 10,
+                     command=lambda: holst.delete(("all"))
+                     )
+empty_holst.grid(row=0, column=7)
+
+#size brush three
+three_btn =  Button(text="3px", width = 10,
+                     command=lambda: brush_size_change(3))
+three_btn.grid(row=1, column = 1)
+
+#size brush one
+one_btn =  Button(text="1px", width = 10,
+                     command=lambda: brush_size_change(1))
+one_btn.grid(row=1, column = 2)
+
+#size brush five
+five_btn =  Button(text="5px", width = 10,
+                     command=lambda: brush_size_change(5))
+five_btn.grid(row=1, column = 3)
+
+
+
+holst.grid(row = 2 , column = 0,
+           columnspan = 7, padx = 5,
+           pady = 5, sticky = E+W+S+N)
+holst.columnconfigure(6, weight = 1)
+holst.rowconfigure(2, weight = 1)
+
+root.mainloop()
+
+"""
+
+# важно всегда писать!!
+"""
+from tkinter import *
+root= tK()
+root.title = ("Time")
+
+root.mainloop()
+"""
+# clock
+from tkinter import *
+import time
+
+def update_time():
+    current_time = time.strftime("%H:%M:%S")
+    time_label.config(text = current_time)
+    time_label.after(1000, update_time)
+
+root= Tk()
+root.title = ("Time")
+
+
+time_label = Label(
+    root,
+    font = ("Arial", 100),
+    bg = "#5c4633",
+    fg = "#d4bca9",
+)
+time_label.pack(padx=5, pady=5)
+
+update_time()
+root.mainloop()
