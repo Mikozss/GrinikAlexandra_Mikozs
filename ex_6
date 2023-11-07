@@ -1,5 +1,11 @@
 #ex 6 Grinik Aleksandra
-n = int(input())  # Enter the number "n"
+while True:
+    n = int(input("Введите число n:\n"))  # Enter the number n
+    if n < 0:  # Check that numbers aren't below zero
+        print("Ошибка, введите число большее чем 0\n")
+    else:
+        break
+
 f1 = 1  #first number in the row
 f2 = 1  #second number in the row
 print('1 1', end=" ")  #print first 2 numbers
