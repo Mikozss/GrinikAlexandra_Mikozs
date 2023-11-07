@@ -1,8 +1,15 @@
 # ex 5 Grinik Aleksandra
-n = int(input()) #input n
-k = 1  #we enter a variable with which we will compare the numbers
+while True:
+    n = int(input("Введите натуральное число: \n")) #input n
+    if n < 0:  # Check that numbers aren't below zero
+        print("Ошибка, введите число большее чем 0\n")
+    else:
+        break
 
 n_list = [] # create list for our numbers
+
+print("Введите числа от 1 до n пропуская одно из них:")
+
 for i in range(n-1):  #enter the numbers from 1 to n-1
     n_list.append(int(input()))  # input numbers from 1 to n
 
