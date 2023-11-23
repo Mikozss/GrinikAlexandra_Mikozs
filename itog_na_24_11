@@ -1,0 +1,74 @@
+from tkinter import *
+from random import *
+
+comp_choose = 0
+player_choose = 0
+score = 0
+
+
+root = Tk()
+root.title('Игра: Камень-Ножницы-Бумага')
+
+root.geometry("1280x720")
+root.resizable(width=False, height=False)
+root['bg'] = "#755c48"
+
+
+#def kkk():
+  #  global score
+   # score += 1
+   # labelscore["text"] = str(score)
+   # labelscore.pack()
+
+def OnButtonClick(self, button_id):
+    if button_id == 1:
+        score = 1
+    elif button_id == 2:
+        score = 2
+    elif button_id == 3:
+        score = 3
+    return score
+
+
+btnRock = Button(root,
+                  text="Камень ",
+                  bg="#362b22",
+                  fg="#bfaa99",
+                  padx="50",
+                  pady="50",
+                  font=("Comic Sans MS", 30, "bold"),
+                  command=OnButtonClick,
+                  command=lambda: self.OnButtonClick(1)
+                  )
+btnRock.place(x=150, y=300)
+
+btnPaper = Button(root,
+                  text="Бумага ",
+                  bg="#362b22",
+                  fg="#bfaa99",
+                  padx="50",
+                  pady="50",
+                  font=("Comic Sans MS", 30, "bold"),
+                  command=lambda: self.OnButtonClick(2),
+                  command=OnButtonClick
+                  )
+btnPaper.place(x = 520, y = 300)
+
+btnScissors = Button(root,
+                  text="Ножницы",
+                  bg="#362b22",
+                  fg="#bfaa99",
+                  padx="50",
+                  pady="50",
+                  command=lambda: self.OnButtonClick(3),
+                  font=("Comic Sans MS", 30, "bold"),
+                  command=OnButtonClick
+                )
+btnScissors.place(x=880, y=300)
+
+labelscore = Label(root, text='0', font=("Comic Sans MS","bold"), bg="black", fg="white")
+labelscore.pack()
+
+
+
+root.mainloop()
